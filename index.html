@@ -307,7 +307,11 @@
             color: var(--secondary);
         }
 
-        /* Portfolio Carousel Section */
+        /* Simplified Portfolio Section - Mobile Friendly */
+        .portfolio {
+            padding: 3rem 0;
+        }
+
         .section-title {
             text-align: center;
             margin: 3rem 0 2rem;
@@ -330,35 +334,23 @@
             transform: translateX(-50%);
         }
 
-        .portfolio-container {
-            position: relative;
-            max-width: 1200px;
-            margin: 0 auto 3rem;
-            padding: 0 40px;
-            overflow: hidden;
-        }
-
-        .portfolio-carousel {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
         }
 
         .portfolio-item {
-            flex: 0 0 33.333%;
-            padding: 0 10px;
+            background-color: var(--gray);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s;
         }
 
         .portfolio-item:hover {
             transform: translateY(-10px);
-        }
-
-        .portfolio-card {
-            background-color: var(--gray);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-            height: 100%;
         }
 
         .portfolio-img {
@@ -373,91 +365,73 @@
             transition: transform 0.5s;
         }
 
-        .portfolio-card:hover .portfolio-img img {
+        .portfolio-item:hover .portfolio-img img {
             transform: scale(1.05);
         }
 
         .portfolio-info {
-            padding: 15px;
+            padding: 20px;
         }
 
         .portfolio-info h3 {
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             margin-bottom: 0.5rem;
             color: var(--text-light);
         }
 
         .portfolio-info p {
             color: #ccc;
-            font-size: 0.85rem;
-            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
         }
 
         .portfolio-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 6px;
+            gap: 8px;
         }
 
         .tag {
             background-color: rgba(139, 0, 0, 0.2);
             color: var(--secondary);
-            padding: 3px 8px;
-            border-radius: 15px;
-            font-size: 0.7rem;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
             font-weight: 600;
         }
 
-        .carousel-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(139, 0, 0, 0.7);
+        /* Simple Slider Navigation */
+        .portfolio-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .nav-btn {
+            background-color: var(--secondary);
             color: white;
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            z-index: 10;
             border: none;
-            font-size: 1rem;
+            font-size: 1.2rem;
             transition: all 0.3s;
         }
 
-        .carousel-nav:hover {
-            background-color: var(--secondary);
+        .nav-btn:hover {
+            background-color: #a30000;
+            transform: scale(1.1);
         }
 
-        .carousel-nav.prev {
-            left: 0;
-        }
-
-        .carousel-nav.next {
-            right: 0;
-        }
-
-        .carousel-dots {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            margin-top: 1.5rem;
-        }
-
-        .carousel-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.3);
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .carousel-dot.active {
-            background-color: var(--secondary);
+        .nav-btn:disabled {
+            background-color: #444;
+            cursor: not-allowed;
+            opacity: 0.5;
         }
 
         /* About Section */
@@ -719,8 +693,8 @@
                 font-size: 2.5rem;
             }
             
-            .portfolio-item {
-                flex: 0 0 50%;
+            .portfolio-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             }
             
             .next-up-grid {
@@ -777,12 +751,9 @@
                 font-size: 0.85rem;
             }
             
-            .portfolio-item {
-                flex: 0 0 100%;
-            }
-            
-            .portfolio-container {
-                padding: 0 30px;
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
             
             .contact-content {
@@ -807,12 +778,6 @@
                 height: 220px;
             }
             
-            .carousel-nav {
-                width: 35px;
-                height: 35px;
-                font-size: 0.9rem;
-            }
-            
             .mobile-menu {
                 width: 160px;
                 right: 10px;
@@ -821,6 +786,16 @@
             /* Video optimization for mobile */
             .hero-video {
                 object-position: center;
+            }
+            
+            .portfolio-nav {
+                margin-top: 1.5rem;
+            }
+            
+            .nav-btn {
+                width: 45px;
+                height: 45px;
+                font-size: 1.1rem;
             }
         }
         
@@ -848,10 +823,6 @@
                 width: 95%;
             }
             
-            .portfolio-container {
-                padding: 0 20px;
-            }
-            
             .contact-form-container {
                 padding: 1.5rem;
             }
@@ -872,12 +843,6 @@
                 height: 200px;
             }
             
-            .carousel-nav {
-                width: 30px;
-                height: 30px;
-                font-size: 0.8rem;
-            }
-            
             .next-up-grid {
                 grid-template-columns: 1fr;
             }
@@ -893,6 +858,20 @@
             /* Video optimization for small screens */
             .hero-video {
                 height: 100%;
+            }
+            
+            .portfolio-info {
+                padding: 15px;
+            }
+            
+            .portfolio-info h3 {
+                font-size: 1.1rem;
+            }
+            
+            .nav-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
             }
         }
         
@@ -923,6 +902,10 @@
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
+            }
+            
+            .portfolio-grid {
+                gap: 1rem;
             }
         }
         
@@ -992,29 +975,24 @@
         </div>
     </section>
 
-    <!-- Portfolio Section -->
+    <!-- Portfolio Section - Simplified -->
     <section class="portfolio" id="portfolio">
         <div class="container">
             <div class="section-title">
                 <h2>Portfolio Showcase</h2>
             </div>
             
-            <div class="portfolio-container">
-                <button class="carousel-nav prev" id="prevBtn">
+            <div class="portfolio-grid" id="portfolioGrid">
+                <!-- Portfolio items will be generated by JavaScript -->
+            </div>
+            
+            <div class="portfolio-nav">
+                <button class="nav-btn" id="prevBtn" disabled>
                     <i class="fas fa-chevron-left"></i>
                 </button>
-                
-                <div class="portfolio-carousel" id="portfolioCarousel">
-                    <!-- Portfolio items will be generated by JavaScript -->
-                </div>
-                
-                <button class="carousel-nav next" id="nextBtn">
+                <button class="nav-btn" id="nextBtn">
                     <i class="fas fa-chevron-right"></i>
                 </button>
-                
-                <div class="carousel-dots" id="carouselDots">
-                    <!-- Carousel dots will be generated by JavaScript -->
-                </div>
             </div>
         </div>
     </section>
@@ -1166,156 +1144,81 @@
             { id: 3, category: "traditional", title: "Classic American", description: "Traditional bold line work", img: "https://images.unsplash.com/photo-1611439739305-ef4c53b5dcfe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" },
             { id: 4, category: "japanese", title: "Koi Fish & Waves", description: "Japanese traditional sleeve", img: "https://images.unsplash.com/photo-1609621838384-25f8e4f4bf2a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" },
             { id: 5, category: "blackwork", title: "Blackout Geometry", description: "Modern blackwork design", img: "https://images.unsplash.com/photo-1609951651556-5334e2706168?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" },
-            { id: 6, category: "realism", title: "Wildlife Realism", description: "Detailed animal portrait", img: "https://images.unsplash.com/photo-1611439717650-72a7a79f1a26?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" },
-            { id: 7, category: "geometric", title: "Geometric Patterns", description: "Symmetrical arm band", img: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80" },
-            { id: 8, category: "traditional", title: "Sailor Jerry Style", description: "Classic nautical theme", img: "https://images.unsplash.com/photo-1611439739132-16d6ef8a2589?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" },
-            { id: 9, category: "japanese", title: "Dragon & Cherry Blossoms", description: "Full back piece", img: "https://images.unsplash.com/photo-1621605815978-2d329d6d0e3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" }
+            { id: 6, category: "realism", title: "Wildlife Realism", description: "Detailed animal portrait", img: "https://images.unsplash.com/photo-1611439717650-72a7a79f1a26?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" }
         ];
 
-        // Carousel variables
-        let currentSlide = 0;
-        let slidesPerView = 3;
-        let autoSlideInterval;
-        const autoSlideDelay = 4000; // 4 seconds
+        // Simple pagination for portfolio
+        let currentPage = 0;
+        const itemsPerPage = 3;
 
-        // Initialize portfolio carousel
-        function initPortfolioCarousel() {
-            const portfolioCarousel = document.getElementById('portfolioCarousel');
-            const carouselDots = document.getElementById('carouselDots');
+        // Initialize portfolio grid
+        function initPortfolio() {
+            const portfolioGrid = document.getElementById('portfolioGrid');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
             
             // Clear existing content
-            portfolioCarousel.innerHTML = '';
-            carouselDots.innerHTML = '';
+            portfolioGrid.innerHTML = '';
             
-            // Calculate number of dots needed
-            const totalSlides = portfolioItems.length;
-            const dotsCount = Math.ceil(totalSlides / slidesPerView);
+            // Calculate start and end indices
+            const startIndex = currentPage * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+            const currentItems = portfolioItems.slice(startIndex, endIndex);
             
-            // Create carousel items
-            portfolioItems.forEach(item => {
+            // Create portfolio items
+            currentItems.forEach(item => {
                 const portfolioItem = document.createElement('div');
                 portfolioItem.className = 'portfolio-item';
                 
                 portfolioItem.innerHTML = `
-                    <div class="portfolio-card">
-                        <div class="portfolio-img">
-                            <img src="${item.img}" alt="${item.title}">
-                        </div>
-                        <div class="portfolio-info">
-                            <h3>${item.title}</h3>
-                            <p>${item.description}</p>
-                            <div class="portfolio-tags">
-                                <span class="tag">${item.category.charAt(0).toUpperCase() + item.category.slice(1)}</span>
-                            </div>
+                    <div class="portfolio-img">
+                        <img src="${item.img}" alt="${item.title}" loading="lazy">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>${item.title}</h3>
+                        <p>${item.description}</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">${item.category.charAt(0).toUpperCase() + item.category.slice(1)}</span>
                         </div>
                     </div>
                 `;
                 
-                portfolioCarousel.appendChild(portfolioItem);
+                portfolioGrid.appendChild(portfolioItem);
             });
             
-            // Create dots
-            for (let i = 0; i < dotsCount; i++) {
-                const dot = document.createElement('button');
-                dot.className = 'carousel-dot';
-                dot.setAttribute('data-slide', i);
-                if (i === 0) dot.classList.add('active');
-                dot.addEventListener('click', () => goToSlide(i));
-                carouselDots.appendChild(dot);
+            // Update button states
+            prevBtn.disabled = currentPage === 0;
+            nextBtn.disabled = endIndex >= portfolioItems.length;
+        }
+
+        // Next page
+        function nextPage() {
+            const totalPages = Math.ceil(portfolioItems.length / itemsPerPage);
+            if (currentPage < totalPages - 1) {
+                currentPage++;
+                initPortfolio();
+                // Smooth scroll to top of portfolio section
+                document.getElementById('portfolio').scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
             }
-            
-            updateCarousel();
-            startAutoSlide();
         }
 
-        // Update carousel position
-        function updateCarousel() {
-            const portfolioCarousel = document.getElementById('portfolioCarousel');
-            const itemWidth = 100 / slidesPerView;
-            const translateX = -currentSlide * itemWidth;
-            portfolioCarousel.style.transform = `translateX(${translateX}%)`;
-            
-            // Update active dot
-            const dots = document.querySelectorAll('.carousel-dot');
-            const activeDotIndex = Math.floor(currentSlide / slidesPerView);
-            
-            dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === activeDotIndex);
-            });
-        }
-
-        // Navigate to specific slide
-        function goToSlide(slideIndex) {
-            const totalSlides = portfolioItems.length;
-            const maxSlide = totalSlides - slidesPerView;
-            
-            if (slideIndex < 0) {
-                currentSlide = maxSlide;
-            } else if (slideIndex > maxSlide) {
-                currentSlide = 0;
-            } else {
-                currentSlide = slideIndex;
+        // Previous page
+        function prevPage() {
+            if (currentPage > 0) {
+                currentPage--;
+                initPortfolio();
+                // Smooth scroll to top of portfolio section
+                document.getElementById('portfolio').scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
             }
-            
-            updateCarousel();
-            resetAutoSlide();
         }
 
-        // Next slide
-        function nextSlide() {
-            const totalSlides = portfolioItems.length;
-            const maxSlide = totalSlides - slidesPerView;
-            
-            if (currentSlide >= maxSlide) {
-                currentSlide = 0; // Infinite loop
-            } else {
-                currentSlide += slidesPerView;
-            }
-            
-            updateCarousel();
-            resetAutoSlide();
-        }
-
-        // Previous slide
-        function prevSlide() {
-            const totalSlides = portfolioItems.length;
-            const maxSlide = totalSlides - slidesPerView;
-            
-            if (currentSlide <= 0) {
-                currentSlide = maxSlide; // Infinite loop
-            } else {
-                currentSlide -= slidesPerView;
-            }
-            
-            updateCarousel();
-            resetAutoSlide();
-        }
-
-        // Start automatic slideshow
-        function startAutoSlide() {
-            autoSlideInterval = setInterval(nextSlide, autoSlideDelay);
-        }
-
-        // Reset automatic slideshow timer
-        function resetAutoSlide() {
-            clearInterval(autoSlideInterval);
-            startAutoSlide();
-        }
-
-        // Update slides per view based on window width
-        function updateSlidesPerView() {
-            if (window.innerWidth <= 768) {
-                slidesPerView = 1;
-            } else if (window.innerWidth <= 992) {
-                slidesPerView = 2;
-            } else {
-                slidesPerView = 3;
-            }
-            
-            initPortfolioCarousel();
-        }
-
-        // Mobile menu functionality - Smaller dropdown
+        // Mobile menu functionality
         function initMobileMenu() {
             const mobileMenuBtn = document.getElementById('mobileMenuBtn');
             const mobileMenu = document.getElementById('mobileMenu');
@@ -1401,28 +1304,15 @@
 
         // Initialize everything when DOM is loaded
         document.addEventListener('DOMContentLoaded', function() {
-            initPortfolioCarousel();
+            initPortfolio();
             initMobileMenu();
             initSmoothScrolling();
             initContactForm();
             initVideoFallback();
             
-            // Carousel navigation
-            document.getElementById('prevBtn').addEventListener('click', prevSlide);
-            document.getElementById('nextBtn').addEventListener('click', nextSlide);
-            
-            // Update slides per view on window resize
-            window.addEventListener('resize', updateSlidesPerView);
-            
-            // Pause autoslide when hovering over carousel
-            const portfolioContainer = document.querySelector('.portfolio-container');
-            portfolioContainer.addEventListener('mouseenter', () => {
-                clearInterval(autoSlideInterval);
-            });
-            
-            portfolioContainer.addEventListener('mouseleave', () => {
-                startAutoSlide();
-            });
+            // Portfolio navigation
+            document.getElementById('prevBtn').addEventListener('click', prevPage);
+            document.getElementById('nextBtn').addEventListener('click', nextPage);
         });
     </script>
 </body>
