@@ -49,7 +49,7 @@
             padding: 0 15px;
         }
 
-        /* Header - More minimal and elegant */
+        /* Header */
         header {
             background-color: var(--primary);
             position: fixed;
@@ -91,7 +91,6 @@
             font-weight: 600;
         }
 
-        /* Navigation - Minimal */
         nav ul {
             display: flex;
             list-style: none;
@@ -114,22 +113,6 @@
             color: var(--accent);
         }
 
-        nav a:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 1px;
-            background: var(--accent);
-            left: 0;
-            bottom: 0;
-            transition: var(--transition);
-        }
-
-        nav a:hover:after {
-            width: 100%;
-        }
-
-        /* Mobile menu - More subtle */
         .mobile-menu-btn {
             display: none;
             background: none;
@@ -138,11 +121,6 @@
             font-size: 1.4rem;
             cursor: pointer;
             z-index: 1001;
-            transition: var(--transition);
-        }
-
-        .mobile-menu-btn:hover {
-            color: var(--accent);
         }
 
         .mobile-menu {
@@ -157,15 +135,10 @@
             padding: 1rem;
             border: 1px solid rgba(139, 0, 0, 0.2);
             backdrop-filter: blur(10px);
-            opacity: 0;
-            transform: translateY(-10px);
-            transition: var(--transition);
         }
 
         .mobile-menu.active {
             display: block;
-            opacity: 1;
-            transform: translateY(0);
         }
 
         .mobile-menu ul {
@@ -183,16 +156,11 @@
             font-weight: 400;
             text-transform: uppercase;
             letter-spacing: 1.2px;
-            transition: var(--transition);
             display: block;
             padding: 0.4rem 0;
         }
 
-        .mobile-menu a:hover {
-            color: var(--accent);
-        }
-
-        /* Hero Section - More intimate */
+        /* Hero Section */
         .hero {
             height: 100vh;
             min-height: 600px;
@@ -205,17 +173,6 @@
             align-items: center;
             text-align: center;
             position: relative;
-            overflow: hidden;
-        }
-
-        .hero:before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100px;
-            background: linear-gradient(transparent, var(--primary));
         }
 
         .hero-content {
@@ -227,32 +184,24 @@
         }
 
         .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1.2rem;
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
             color: var(--text-light);
             line-height: 1.2;
         }
 
-        .hero h1 span {
-            color: var(--accent);
-            font-weight: 600;
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            color: var(--text-gray);
-            font-weight: 300;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
         }
 
         .btn {
             display: inline-block;
             background-color: transparent;
             color: var(--accent);
-            padding: 10px 28px;
+            padding: 12px 28px;
             border-radius: 2px;
             text-decoration: none;
             font-weight: 500;
@@ -261,19 +210,7 @@
             transition: var(--transition);
             border: 1px solid var(--accent);
             font-size: 0.9rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
-            transition: var(--transition);
+            min-width: 140px;
         }
 
         .btn:hover {
@@ -281,11 +218,7 @@
             color: var(--accent);
         }
 
-        .btn:hover:before {
-            left: 100%;
-        }
-
-        /* Portfolio Section - More fitted */
+        /* Portfolio Section - SIMPLE CAROUSEL */
         .section-title {
             text-align: center;
             margin: 3.5rem 0 2.5rem;
@@ -310,90 +243,61 @@
             transform: translateX(-50%);
         }
 
-        .portfolio-container {
+        .carousel-container {
             position: relative;
-            max-width: 1100px;
-            margin: 0 auto 4rem;
-            padding: 0 20px;
+            max-width: 900px;
+            margin: 0 auto 3rem;
+            overflow: hidden;
         }
 
-        .portfolio-carousel {
+        .carousel-track {
             display: flex;
             transition: transform 0.5s ease;
-            gap: 0;
         }
 
-        .portfolio-item {
-            flex: 0 0 100%;
-            padding: 0 10px;
+        .carousel-slide {
+            min-width: 100%;
+            padding: 0 15px;
+            box-sizing: border-box;
         }
 
         .portfolio-card {
             background-color: var(--gray);
             border-radius: 3px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             height: 100%;
             border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: var(--transition);
-        }
-
-        .portfolio-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(139, 0, 0, 0.2);
-            border-color: rgba(139, 0, 0, 0.3);
+            max-width: 400px;
+            margin: 0 auto;
         }
 
         .portfolio-img {
-            height: 250px;
+            height: 300px;
             overflow: hidden;
-            position: relative;
-        }
-
-        .portfolio-img:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 40px;
-            background: linear-gradient(transparent, rgba(10, 10, 10, 0.7));
         }
 
         .portfolio-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.7s ease;
-        }
-
-        .portfolio-card:hover .portfolio-img img {
-            transform: scale(1.05);
         }
 
         .portfolio-info {
-            padding: 1.2rem;
+            padding: 1.5rem;
         }
 
         .portfolio-info h3 {
-            font-size: 1.1rem;
-            margin-bottom: 0.4rem;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
             color: var(--text-light);
             font-weight: 500;
         }
 
         .portfolio-info p {
             color: var(--text-gray);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             margin-bottom: 1rem;
             font-weight: 300;
-        }
-
-        .portfolio-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-bottom: 1rem;
         }
 
         .tag {
@@ -407,15 +311,14 @@
             border: 1px solid rgba(139, 0, 0, 0.2);
         }
 
-        /* Learn More Button - More subtle */
         .learn-more-btn {
             background-color: transparent;
             border: 1px solid var(--accent);
             color: var(--accent);
-            padding: 6px 16px;
+            padding: 8px 20px;
             border-radius: 2px;
             font-weight: 500;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             cursor: pointer;
             transition: var(--transition);
             display: inline-flex;
@@ -423,21 +326,24 @@
             gap: 6px;
             text-transform: uppercase;
             letter-spacing: 1px;
+            width: 100%;
+            justify-content: center;
+            margin-top: 1rem;
         }
 
         .learn-more-btn:hover {
             background-color: rgba(212, 175, 55, 0.1);
         }
 
-        /* Carousel Navigation - Minimal */
+        /* Simple navigation buttons */
         .carousel-nav {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
             background-color: rgba(139, 0, 0, 0.3);
             color: var(--off-white);
-            width: 36px;
-            height: 36px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -445,9 +351,8 @@
             cursor: pointer;
             z-index: 10;
             border: none;
-            font-size: 1rem;
+            font-size: 1.2rem;
             transition: var(--transition);
-            backdrop-filter: blur(5px);
         }
 
         .carousel-nav:hover {
@@ -455,23 +360,23 @@
         }
 
         .carousel-nav.prev {
-            left: 5px;
+            left: 10px;
         }
 
         .carousel-nav.next {
-            right: 5px;
+            right: 10px;
         }
 
         .carousel-dots {
             display: flex;
             justify-content: center;
-            gap: 8px;
-            margin-top: 1.5rem;
+            gap: 10px;
+            margin-top: 2rem;
         }
 
         .carousel-dot {
-            width: 8px;
-            height: 8px;
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
             background-color: rgba(255, 255, 255, 0.2);
             border: none;
@@ -483,22 +388,10 @@
             background-color: var(--accent);
         }
 
-        /* About Section - More personal */
+        /* About Section */
         .about {
             background-color: var(--gray);
             padding: 4rem 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .about:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--accent), transparent);
         }
 
         .about-content {
@@ -509,13 +402,12 @@
             border-radius: 2px;
             overflow: hidden;
             margin-bottom: 2rem;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(212, 175, 55, 0.1);
         }
 
         .about-img img {
             width: 100%;
-            height: 300px;
+            height: 400px;
             object-fit: cover;
             display: block;
         }
@@ -559,17 +451,6 @@
         .contact {
             padding: 4rem 0;
             background-color: var(--primary);
-            position: relative;
-        }
-
-        .contact:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--secondary), transparent);
         }
 
         .contact-content {
@@ -594,7 +475,6 @@
             background-color: rgba(42, 42, 42, 0.3);
             border-radius: 2px;
             transition: var(--transition);
-            border: 1px solid transparent;
         }
 
         .contact-item:hover {
@@ -631,13 +511,11 @@
             font-weight: 300;
         }
 
-        /* Next Up Projects */
         .next-up {
             background-color: rgba(0, 0, 0, 0.3);
             padding: 1.5rem;
             border-radius: 2px;
             margin-top: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .next-up h4 {
@@ -660,14 +538,6 @@
             border-radius: 2px;
             padding: 1rem;
             text-align: center;
-            transition: var(--transition);
-            border: 1px solid transparent;
-        }
-
-        .next-up-item:hover {
-            transform: translateY(-3px);
-            border-color: rgba(212, 175, 55, 0.2);
-            background-color: rgba(212, 175, 55, 0.05);
         }
 
         .next-up-item i {
@@ -682,12 +552,16 @@
             font-weight: 300;
         }
 
+        .rebirth-logo {
+            font-size: 1.8rem;
+            color: var(--secondary);
+        }
+
         .contact-form-container {
             background-color: var(--gray);
             padding: 2rem;
             border-radius: 2px;
             margin-top: 2.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .contact-form-container h3 {
@@ -751,17 +625,6 @@
             padding: 2.5rem 0 1.5rem;
             text-align: center;
             border-top: 1px solid rgba(139, 0, 0, 0.1);
-            position: relative;
-        }
-
-        footer:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--accent), transparent);
         }
 
         .footer-logo {
@@ -799,8 +662,6 @@
         .social-links a:hover {
             color: var(--accent);
             transform: translateY(-2px);
-            border-color: rgba(212, 175, 55, 0.3);
-            background-color: rgba(212, 175, 55, 0.05);
         }
 
         .copyright {
@@ -813,7 +674,7 @@
             color: var(--accent);
         }
 
-        /* Artwork Modal */
+        /* Artwork Detail Modal */
         .art-modal {
             display: none;
             position: fixed;
@@ -824,7 +685,6 @@
             background-color: rgba(0, 0, 0, 0.95);
             z-index: 2000;
             overflow-y: auto;
-            backdrop-filter: blur(5px);
         }
 
         .modal-content {
@@ -834,14 +694,7 @@
             max-width: 500px;
             border-radius: 3px;
             position: relative;
-            animation: modalFadeIn 0.3s;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        }
-
-        @keyframes modalFadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         .close-modal {
@@ -865,8 +718,6 @@
 
         .close-modal:hover {
             color: var(--accent);
-            border-color: rgba(212, 175, 55, 0.3);
-            background: rgba(212, 175, 55, 0.05);
         }
 
         .modal-body {
@@ -953,10 +804,6 @@
             font-weight: 500;
         }
 
-        .artist-note h3 i {
-            font-size: 0.9rem;
-        }
-
         .artist-note p {
             color: var(--off-white);
             font-size: 0.9rem;
@@ -967,16 +814,8 @@
 
         /* Responsive Design */
         @media (min-width: 768px) {
-            .container {
-                width: 90%;
-            }
-            
             .hero h1 {
-                font-size: 3rem;
-            }
-            
-            .portfolio-item {
-                flex: 0 0 50%;
+                font-size: 4rem;
             }
             
             .about-content {
@@ -1001,29 +840,8 @@
                 margin-top: 0;
             }
             
-            .modal-content {
-                max-width: 800px;
-            }
-            
-            .modal-body {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                min-height: 400px;
-            }
-            
-            .modal-image {
-                border-bottom: none;
-                border-right: 1px solid rgba(255, 255, 255, 0.1);
-            }
-        }
-
-        @media (min-width: 992px) {
-            .portfolio-item {
-                flex: 0 0 33.333%;
-            }
-            
-            .hero h1 {
-                font-size: 3.5rem;
+            .hero-buttons {
+                flex-direction: row;
             }
         }
 
@@ -1036,53 +854,49 @@
                 display: block;
             }
             
-            .hero {
-                min-height: 500px;
-            }
-            
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
             
-            .hero p {
-                font-size: 1rem;
+            .hero-buttons {
+                flex-direction: row;
+                gap: 1rem;
+            }
+            
+            .btn {
+                min-width: 120px;
+                padding: 10px 15px;
+                font-size: 0.85rem;
             }
             
             .carousel-nav {
-                width: 32px;
-                height: 32px;
-                font-size: 0.9rem;
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
             }
             
-            .carousel-nav.prev {
-                left: 0;
-            }
-            
-            .carousel-nav.next {
-                right: 0;
-            }
-            
-            .next-up-grid {
-                grid-template-columns: 1fr;
+            .about-img img {
+                height: 300px;
             }
         }
         
         @media (max-width: 480px) {
-            .portfolio-container {
-                padding: 0 5px;
+            .hero h1 {
+                font-size: 2rem;
             }
             
-            .portfolio-item {
-                padding: 0 8px;
+            .hero-buttons {
+                gap: 0.8rem;
             }
             
-            .contact-form-container {
-                padding: 1.5rem;
+            .btn {
+                min-width: 110px;
+                padding: 8px 12px;
+                font-size: 0.8rem;
             }
             
-            .modal-content {
-                margin: 5% auto;
-                width: 98%;
+            .portfolio-img {
+                height: 250px;
             }
         }
     </style>
@@ -1125,26 +939,28 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container hero-content">
-            <h1>From Darkness<br><span>Emerges Light</span></h1>
-            <p>Every scar tells a story, every line carries meaning. Transforming pain into permanence, memory into art. This is my journey back to light.</p>
-            <a href="#portfolio" class="btn">View the Journey</a>
+            <h1>@BlackWidowInks</h1>
+            <div class="hero-buttons">
+                <a href="#portfolio" class="btn">Art</a>
+                <a href="#about" class="btn">Artist</a>
+            </div>
         </div>
     </section>
 
-    <!-- Portfolio Section -->
+    <!-- Portfolio Section - SIMPLE WORKING CAROUSEL -->
     <section class="portfolio" id="portfolio">
         <div class="container">
             <div class="section-title">
                 <h2>Portfolio</h2>
             </div>
             
-            <div class="portfolio-container">
+            <div class="carousel-container">
                 <button class="carousel-nav prev" id="prevBtn">
                     <i class="fas fa-chevron-left"></i>
                 </button>
                 
-                <div class="portfolio-carousel" id="portfolioCarousel">
-                    <!-- Portfolio items will be generated by JavaScript -->
+                <div class="carousel-track" id="carouselTrack">
+                    <!-- Carousel slides will be generated by JavaScript -->
                 </div>
                 
                 <button class="carousel-nav next" id="nextBtn">
@@ -1152,7 +968,7 @@
                 </button>
                 
                 <div class="carousel-dots" id="carouselDots">
-                    <!-- Carousel dots will be generated by JavaScript -->
+                    <!-- Dots will be generated by JavaScript -->
                 </div>
             </div>
         </div>
@@ -1167,7 +983,7 @@
             
             <div class="about-content">
                 <div class="about-img">
-                    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Black Widow Inks Tattoo Artist">
+                    <img src="IMG_7376.jpeg" alt="Black Widow Inks Tattoo Artist">
                 </div>
                 <div class="about-text">
                     <h2>A Journey Through Ink</h2>
@@ -1233,7 +1049,7 @@
                         <h4>Coming Soon</h4>
                         <div class="next-up-grid">
                             <div class="next-up-item">
-                                <i class="fas fa-phoenix"></i>
+                                <i class="fas fa-spider rebirth-logo"></i>
                                 <p>Rebirth Series</p>
                             </div>
                             <div class="next-up-item">
@@ -1321,89 +1137,101 @@
     </div>
 
     <script>
-        // Portfolio Data with emotional depth
+        // Portfolio Data - Updated with your 8 images
         const portfolioItems = [
             { 
                 id: 1, 
                 category: "rebirth", 
-                title: "Phoenix Rising", 
-                description: "From ashes to new beginnings",
-                artistDescription: "This piece was created during my own period of recovery. Each feather represents a challenge overcome, a lesson learned. The client had just left an abusive relationship and wanted a symbol of her own rebirth. We worked through three sessions, each one therapeutic for both of us.",
+                title: "Emerging Phoenix", 
+                description: "Rising from the ashes of the past",
+                artistDescription: "This piece was created for a client who survived a life-changing accident. The phoenix symbolizes their rebirth and transformation. Each feather was carefully shaded to show the journey from darkness to light.",
                 creationDate: "Spring 2023",
-                img: "https://images.unsplash.com/photo-1611439692650-2cb4d0c99d32?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                img: "IMG_7376.jpeg" 
             },
             { 
                 id: 2, 
                 category: "healing", 
-                title: "Fractured Whole", 
-                description: "Broken pieces forming new beauty",
-                artistDescription: "The client came to me with scars she wanted transformed. This geometric design incorporates her surgical scars into a pattern that represents how brokenness can create new patterns of strength. The gold lines symbolize the healing that holds us together.",
+                title: "Fractured Beauty", 
+                description: "Finding strength in brokenness",
+                artistDescription: "Created during a period of personal healing. The cracks represent past traumas, while the gold filling symbolizes the beauty that emerges from healing. This piece took 12 hours over two sessions.",
                 creationDate: "Winter 2023",
-                img: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                img: "IMG_7016.jpeg" 
             },
             { 
                 id: 3, 
                 category: "memory", 
-                title: "Anchors of Memory", 
-                description: "Traditional with personal symbolism",
-                artistDescription: "A sailor-style anchor for a client who lost his father at sea. The coordinates are his father's favorite fishing spot. The bold lines represent strength, the roses the beauty of memory. Sometimes the oldest styles carry the deepest meanings.",
+                title: "Ancestral Whispers", 
+                description: "Honoring lineage through ink",
+                artistDescription: "A tribute piece incorporating family symbols and cultural heritage. The client wanted to carry their ancestors' stories with them. Traditional patterns meet modern tattoo techniques.",
                 creationDate: "Fall 2022",
-                img: "https://images.unsplash.com/photo-1611439739305-ef4c53b5dcfe?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                img: "IMG_5831.jpeg" 
             },
             { 
                 id: 4, 
                 category: "journey", 
-                title: "Against the Current", 
-                description: "Japanese koi for perseverance",
-                artistDescription: "This client was recovering from addiction. The koi swimming upstream represents the daily struggle and determination. The cherry blossoms remind us that even in struggle, there is transient beauty. Each scale was individually shaded over 15 hours.",
+                title: "Ocean's Journey", 
+                description: "Navigating life's turbulent waters",
+                artistDescription: "For a client who overcame addiction. The waves represent the struggles, the ship symbolizes their journey, and the lighthouse represents hope. Each element tells part of their recovery story.",
                 creationDate: "Summer 2023",
-                img: "https://images.unsplash.com/photo-1609621838384-25f8e4f4bf2a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                img: "IMG_8329.jpeg" 
             },
             { 
                 id: 5, 
                 category: "strength", 
-                title: "Negative Space", 
-                description: "What's missing defines what remains",
-                artistDescription: "A piece about reclaiming what was taken. The client survived cancer and wanted to commemorate the parts of herself she lost and found. The negative space represents what was removed, the solid black what remains stronger. Minimalist but deeply personal.",
+                title: "Mountain Spirit", 
+                description: "Unshakable strength through adversity",
+                artistDescription: "This client had survived cancer and wanted a symbol of their resilience. The mountain represents their unshakeable spirit, the trees symbolize growth, and the sun represents new beginnings.",
                 creationDate: "Spring 2023",
-                img: "https://images.unsplash.com/photo-1609951651556-5334e2706168?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                img: "IMG_8103.jpeg" 
             },
             { 
                 id: 6, 
                 category: "connection", 
-                title: "Guardian Spirit", 
-                description: "Animal portrait with spiritual elements",
-                artistDescription: "A memorial piece for a client's service dog who passed. The wolf represents loyalty, the floral elements the beauty of their bond. The eyes were the most challenging - capturing that same look of unconditional love. We both cried during the final session.",
+                title: "Celestial Bond", 
+                description: "Cosmic connections that transcend",
+                artistDescription: "A matching piece for two siblings separated by distance. The constellations represent their birth signs, connected by a cosmic thread. Even when apart, they remain connected.",
                 creationDate: "Winter 2022",
-                img: "https://images.unsplash.com/photo-1611439717650-72a7a79f1a26?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                img: "303E3277-EF6C-4C92-9F93-AA8397861520.JPG" 
+            },
+            { 
+                id: 7, 
+                category: "rebirth", 
+                title: "Lotus Awakening", 
+                description: "Blooming through murky waters",
+                artistDescription: "Created for a client emerging from depression. The lotus symbolizes purity and rebirth. The water droplets contain tiny initials of people who supported their journey to recovery.",
+                creationDate: "Summer 2023",
+                img: "B53C6F6D-22CE-4605-BECE-8E0B7B1589B3.JPG" 
+            },
+            { 
+                id: 8, 
+                category: "transformation", 
+                title: "Metamorphic Journey", 
+                description: "From caterpillar to butterfly",
+                artistDescription: "A piece celebrating gender transition. Each stage of the butterfly's life represents a different phase of the client's journey. The design wraps around, symbolizing the continuous nature of transformation.",
+                creationDate: "Fall 2023",
+                img: "IMG_4989.JPEG" 
             }
         ];
 
-        // Carousel variables
+        // Simple Carousel Variables
         let currentSlide = 0;
-        let slidesPerView = 1;
-        let autoSlideInterval;
-        const autoSlideDelay = 5000;
+        const totalSlides = portfolioItems.length;
 
-        // Initialize portfolio carousel
-        function initPortfolioCarousel() {
-            const portfolioCarousel = document.getElementById('portfolioCarousel');
+        // Initialize carousel
+        function initCarousel() {
+            const carouselTrack = document.getElementById('carouselTrack');
             const carouselDots = document.getElementById('carouselDots');
             
             // Clear existing content
-            portfolioCarousel.innerHTML = '';
+            carouselTrack.innerHTML = '';
             carouselDots.innerHTML = '';
             
-            // Calculate number of dots needed
-            const totalSlides = portfolioItems.length;
-            const dotsCount = Math.ceil(totalSlides / slidesPerView);
-            
-            // Create carousel items
-            portfolioItems.forEach(item => {
-                const portfolioItem = document.createElement('div');
-                portfolioItem.className = 'portfolio-item';
+            // Create slides - one slide per item
+            portfolioItems.forEach((item, index) => {
+                const slide = document.createElement('div');
+                slide.className = 'carousel-slide';
                 
-                portfolioItem.innerHTML = `
+                slide.innerHTML = `
                     <div class="portfolio-card">
                         <div class="portfolio-img">
                             <img src="${item.img}" alt="${item.title}" loading="lazy">
@@ -1421,108 +1249,56 @@
                     </div>
                 `;
                 
-                portfolioCarousel.appendChild(portfolioItem);
+                carouselTrack.appendChild(slide);
             });
             
-            // Create dots
-            for (let i = 0; i < dotsCount; i++) {
+            // Create dots (one per slide)
+            for (let i = 0; i < totalSlides; i++) {
                 const dot = document.createElement('button');
                 dot.className = 'carousel-dot';
-                dot.setAttribute('data-slide', i);
                 if (i === 0) dot.classList.add('active');
                 dot.addEventListener('click', () => goToSlide(i));
                 carouselDots.appendChild(dot);
             }
             
             updateCarousel();
-            startAutoSlide();
         }
 
         // Update carousel position
         function updateCarousel() {
-            const portfolioCarousel = document.getElementById('portfolioCarousel');
-            const itemWidth = 100 / slidesPerView;
-            const translateX = -currentSlide * itemWidth;
-            portfolioCarousel.style.transform = `translateX(${translateX}%)`;
+            const carouselTrack = document.getElementById('carouselTrack');
+            const slideWidth = 100; // 100% per slide (one at a time)
+            const translateX = -currentSlide * slideWidth;
+            carouselTrack.style.transform = `translateX(${translateX}%)`;
             
             // Update active dot
             const dots = document.querySelectorAll('.carousel-dot');
-            const activeDotIndex = Math.floor(currentSlide / slidesPerView);
-            
             dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === activeDotIndex);
+                dot.classList.toggle('active', index === currentSlide);
             });
         }
 
         // Navigate to specific slide
         function goToSlide(slideIndex) {
-            const totalSlides = portfolioItems.length;
-            const maxSlide = totalSlides - slidesPerView;
-            
             if (slideIndex < 0) {
-                currentSlide = maxSlide;
-            } else if (slideIndex > maxSlide) {
+                currentSlide = totalSlides - 1;
+            } else if (slideIndex >= totalSlides) {
                 currentSlide = 0;
             } else {
                 currentSlide = slideIndex;
             }
             
             updateCarousel();
-            resetAutoSlide();
         }
 
         // Next slide
         function nextSlide() {
-            const totalSlides = portfolioItems.length;
-            const maxSlide = totalSlides - slidesPerView;
-            
-            if (currentSlide >= maxSlide) {
-                currentSlide = 0;
-            } else {
-                currentSlide += slidesPerView;
-            }
-            
-            updateCarousel();
-            resetAutoSlide();
+            goToSlide(currentSlide + 1);
         }
 
         // Previous slide
         function prevSlide() {
-            const totalSlides = portfolioItems.length;
-            const maxSlide = totalSlides - slidesPerView;
-            
-            if (currentSlide <= 0) {
-                currentSlide = maxSlide;
-            } else {
-                currentSlide -= slidesPerView;
-            }
-            
-            updateCarousel();
-            resetAutoSlide();
-        }
-
-        // Start automatic slideshow
-        function startAutoSlide() {
-            autoSlideInterval = setInterval(nextSlide, autoSlideDelay);
-        }
-
-        // Reset automatic slideshow timer
-        function resetAutoSlide() {
-            clearInterval(autoSlideInterval);
-            startAutoSlide();
-        }
-
-        // Update slides per view based on window width
-        function updateSlidesPerView() {
-            if (window.innerWidth <= 767) {
-                slidesPerView = 1;
-            } else if (window.innerWidth <= 991) {
-                slidesPerView = 2;
-            } else {
-                slidesPerView = 3;
-            }
-            
-            initPortfolioCarousel();
+            goToSlide(currentSlide - 1);
         }
 
         // Mobile menu functionality
@@ -1530,20 +1306,17 @@
             const mobileMenuBtn = document.getElementById('mobileMenuBtn');
             const mobileMenu = document.getElementById('mobileMenu');
             
-            // Toggle mobile menu
             mobileMenuBtn.addEventListener('click', (e) => {
                 e.stopPropagation();
                 mobileMenu.classList.toggle('active');
             });
             
-            // Close menu when clicking outside
             document.addEventListener('click', (e) => {
                 if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
                     mobileMenu.classList.remove('active');
                 }
             });
             
-            // Close menu when clicking on a link
             mobileMenu.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => {
                     mobileMenu.classList.remove('active');
@@ -1584,10 +1357,8 @@
                     return;
                 }
                 
-                // Show success message
                 alert(`Thank you for sharing your story, ${name}. Your courage is the first brushstroke. I'll reach out within 48 hours to continue this conversation.`);
                 
-                // Reset form
                 this.reset();
             });
         }
@@ -1597,7 +1368,6 @@
             const item = portfolioItems.find(item => item.id === itemId);
             if (!item) return;
             
-            // Populate modal with item data
             document.getElementById('modalImg').src = item.img;
             document.getElementById('modalImg').alt = item.title;
             document.getElementById('modalTitle').textContent = item.title;
@@ -1606,7 +1376,6 @@
             document.getElementById('modalDescription').textContent = item.description;
             document.getElementById('modalArtistDescription').textContent = item.artistDescription;
             
-            // Show modal
             document.getElementById('artModal').style.display = 'block';
             document.body.style.overflow = 'hidden';
         }
@@ -1618,7 +1387,7 @@
 
         // Initialize everything when DOM is loaded
         document.addEventListener('DOMContentLoaded', function() {
-            initPortfolioCarousel();
+            initCarousel();
             initMobileMenu();
             initSmoothScrolling();
             initContactForm();
@@ -1626,19 +1395,6 @@
             // Carousel navigation
             document.getElementById('prevBtn').addEventListener('click', prevSlide);
             document.getElementById('nextBtn').addEventListener('click', nextSlide);
-            
-            // Update slides per view on window resize
-            window.addEventListener('resize', updateSlidesPerView);
-            
-            // Pause autoslide when hovering over carousel
-            const portfolioContainer = document.querySelector('.portfolio-container');
-            portfolioContainer.addEventListener('mouseenter', () => {
-                clearInterval(autoSlideInterval);
-            });
-            
-            portfolioContainer.addEventListener('mouseleave', () => {
-                startAutoSlide();
-            });
             
             // Modal close button
             document.querySelector('.close-modal').addEventListener('click', closeArtworkModal);
