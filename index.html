@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Widow Inks | Premium Tattoo Artistry</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0a0a0a;
+            --secondary: #8b0000;
+            --accent: #d4af37;
+            --text-light: #f5f5f5;
+            --text-dark: #333;
+            --gray: #2a2a2a;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--text-light);
+            background-color: var(--primary);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: rgba(10, 10, 10, 0.95);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(139, 0, 0, 0.3);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            color: var(--secondary);
+            font-size: 1.8rem;
+        }
+
+        .logo-text {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            color: var(--text-light);
+        }
+
+        .logo-text span {
+            color: var(--secondary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--secondary);
+        }
+
+        nav a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            left: 0;
+            bottom: -5px;
+            transition: width 0.3s;
+        }
+
+        nav a:hover:after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        /* Mobile menu styles */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(10, 10, 10, 0.98);
+            z-index: 999;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transform: translateY(-100%);
+            transition: all 0.4s ease;
+        }
+
+        .mobile-menu.active {
+            display: flex;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            text-align: center;
+        }
+
+        .mobile-menu li {
+            margin: 1.5rem 0;
+        }
+
+        .mobile-menu a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: color 0.3s;
+        }
+
+        .mobile-menu a:hover {
+            color: var(--secondary);
+        }
+
+        .close-menu {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(10, 10, 10, 0.85), rgba(10, 10, 10, 0.9)), url('https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+        }
+
+        .hero h1 span {
+            color: var(--secondary);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            color: #ccc;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--text-light);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            border: 2px solid var(--secondary);
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--secondary);
+        }
+
+        /* Portfolio Carousel Section */
+        .section-title {
+            text-align: center;
+            margin: 4rem 0 3rem;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            display: inline-block;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .portfolio-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto 5rem;
+            padding: 0 60px;
+            overflow: hidden;
+        }
+
+        .portfolio-carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .portfolio-item {
+            flex: 0 0 33.333%;
+            padding: 0 15px;
+            transition: transform 0.3s;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .portfolio-card {
+            background-color: var(--gray);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            height: 100%;
+        }
+
+        .portfolio-img {
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .portfolio-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .portfolio-card:hover .portfolio-img img {
+            transform: scale(1.05);
+        }
+
+        .portfolio-info {
+            padding: 20px;
+        }
+
+        .portfolio-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .portfolio-info p {
+            color: #ccc;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background-color: rgba(139, 0, 0, 0.2);
+            color: var(--secondary);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(139, 0, 0, 0.7);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            border: none;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+
+        .carousel-nav:hover {
+            background-color: var(--secondary);
+        }
+
+        .carousel-nav.prev {
+            left: 0;
+        }
+
+        .carousel-nav.next {
+            right: 0;
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 2rem;
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.3);
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .carousel-dot.active {
+            background-color: var(--secondary);
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--gray);
+            padding: 5rem 0;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-img {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .about-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: #ccc;
+        }
+
+        /* Booking Section */
+        .booking {
+            padding: 5rem 0;
+        }
+
+        .booking-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .booking-form {
+            background-color: var(--gray);
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            background-color: #1a1a1a;
+            border: 1px solid #444;
+            border-radius: 4px;
+            color: var(--text-light);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--gray);
+            padding: 5rem 0;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .contact-details {
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .contact-icon {
+            background-color: var(--secondary);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a0a0a;
+            padding: 3rem 0 1.5rem;
+            text-align: center;
+            border-top: 1px solid rgba(139, 0, 0, 0.3);
+        }
+
+        .footer-logo {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo span {
+            color: var(--secondary);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links a {
+            color: var(--text-light);
+            font-size: 1.3rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--secondary);
+        }
+
+        .copyright {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-content, .booking-content, .contact-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .portfolio-item {
+                flex: 0 0 50%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .portfolio-item {
+                flex: 0 0 100%;
+            }
+            
+            .portfolio-container {
+                padding: 0 40px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .portfolio-container {
+                padding: 0 20px;
+            }
+            
+            .carousel-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-spider"></i>
+                </div>
+                <div class="logo-text">Black Widow<span>Inks</span></div>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#booking">Booking</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="mobile-menu" id="mobileMenu">
+                <button class="close-menu" id="closeMenuBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#booking">Booking</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h1>Black Widow <span>Inks</span></h1>
+            <p>Premium tattoo artistry with precision, passion, and an eye for detail. Transforming your vision into permanent art that tells your unique story.</p>
+            <a href="#portfolio" class="btn">View Portfolio</a>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <div class="section-title">
+                <h2>Portfolio Showcase</h2>
+            </div>
+            
+            <div class="portfolio-container">
+                <button class="carousel-nav prev" id="prevBtn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <div class="portfolio-carousel" id="portfolioCarousel">
+                    <!-- Portfolio items will be generated by JavaScript -->
+                </div>
+                
+                <button class="carousel-nav next" id="nextBtn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                
+                <div class="carousel-dots" id="carouselDots">
+                    <!-- Carousel dots will be generated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Black Widow Inks Tattoo Artist">
+                </div>
+                <div class="about-text">
+                    <h2>About the Artist</h2>
+                    <p>With over 15 years of experience in the tattoo industry, the artist behind Black Widow Inks has developed a reputation for exceptional detail work and a unique artistic vision. Specializing in custom designs that blend technical precision with creative expression.</p>
+                    <p>Each tattoo is approached as a collaborative journey with the client, ensuring the final piece is not only visually stunning but also deeply personal and meaningful.</p>
+                    <p>Our studio maintains the highest standards of cleanliness and safety, using only premium inks and single-use needles to ensure a safe and comfortable experience for every client.</p>
+                    <a href="#booking" class="btn">Book a Consultation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking" id="booking">
+        <div class="container">
+            <div class="section-title">
+                <h2>Book Your Session</h2>
+            </div>
+            
+            <div class="booking-content">
+                <div class="booking-info">
+                    <h3>Consultation Process</h3>
+                    <p>Every tattoo begins with a consultation to discuss your ideas, placement, size, and style. This ensures we create a design that perfectly matches your vision.</p>
+                    <p>After the consultation, you'll receive a custom design and quote. Once approved, we'll schedule your session and provide detailed preparation instructions.</p>
+                    <p>We require a deposit to secure your booking, which will be applied to the final cost of your tattoo.</p>
+                    
+                    <h3>Studio Hours</h3>
+                    <p>Tuesday - Saturday: 10am - 8pm</p>
+                    <p>Sunday & Monday: Closed</p>
+                </div>
+                
+                <div class="booking-form">
+                    <h3>Request a Consultation</h3>
+                    <form id="consultationForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="tattoo-type">Tattoo Style Interest</label>
+                            <select id="tattoo-type" class="form-control">
+                                <option value="">Select a style</option>
+                                <option value="realism">Realism</option>
+                                <option value="geometric">Geometric</option>
+                                <option value="traditional">Traditional</option>
+                                <option value="japanese">Japanese</option>
+                                <option value="blackwork">Blackwork</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="description">Tell us about your tattoo idea</label>
+                            <textarea id="description" class="form-control" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Submit Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p>Ready to start your tattoo journey? Contact us to schedule a consultation or ask any questions about our process.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Studio Location</h4>
+                                <p>123 Ink Street, Art District<br>New York, NY 10001</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>(555) 123-INK5</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>contact@blackwidowinks.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="map-container">
+                    <div style="width: 100%; height: 100%; min-height: 300px; background-color: #1a1a1a; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                        <div style="text-align: center; padding: 20px;">
+                            <i class="fas fa-map-marked-alt" style="font-size: 3rem; color: var(--secondary); margin-bottom: 1rem;"></i>
+                            <h3>Studio Location</h3>
+                            <p>123 Ink Street, Art District<br>New York, NY 10001</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">Black Widow<span>Inks</span></div>
+            
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-pinterest-p"></i></a>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Black Widow Inks. All rights reserved. | Professional Tattoo Artistry</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Portfolio Data
+        const portfolioItems = [
+            { id: 1, category: "realism", title: "Portrait Realism", description: "Hyper-realistic portrait tattoo", img: "https://images.unsplash.com/photo-1611439692650-2cb4d0c99d32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80" },
+            { id: 2, category: "geometric", title: "Sacred Geometry", description: "Geometric sleeve with mandala elements", img: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" },
+            { id: 3, category: "traditional", title: "Classic American", description: "Traditional bold line work", img: "https://images.unsplash.com/photo-1611439739305-ef4c53b5dcfe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" },
+            { id: 4, category: "japanese", title: "Koi Fish & Waves", description: "Japanese traditional sleeve", img: "https://images.unsplash.com/photo-1609621838384-25f8e4f4bf2a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" },
+            { id: 5, category: "blackwork", title: "Blackout Geometry", description: "Modern blackwork design", img: "https://images.unsplash.com/photo-1609951651556-5334e2706168?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" },
+            { id: 6, category: "realism", title: "Wildlife Realism", description: "Detailed animal portrait", img: "https://images.unsplash.com/photo-1611439717650-72a7a79f1a26?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" },
+            { id: 7, category: "geometric", title: "Geometric Patterns", description: "Symmetrical arm band", img: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80" },
+            { id: 8, category: "traditional", title: "Sailor Jerry Style", description: "Classic nautical theme", img: "https://images.unsplash.com/photo-1611439739132-16d6ef8a2589?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" },
+            { id: 9, category: "japanese", title: "Dragon & Cherry Blossoms", description: "Full back piece", img: "https://images.unsplash.com/photo-1621605815978-2d329d6d0e3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" }
+        ];
+
+        // Carousel variables
+        let currentSlide = 0;
+        let slidesPerView = 3;
+        let autoSlideInterval;
+        const autoSlideDelay = 4000; // 4 seconds
+
+        // Initialize portfolio carousel
+        function initPortfolioCarousel() {
+            const portfolioCarousel = document.getElementById('portfolioCarousel');
+            const carouselDots = document.getElementById('carouselDots');
+            
+            // Clear existing content
+            portfolioCarousel.innerHTML = '';
+            carouselDots.innerHTML = '';
+            
+            // Calculate number of dots needed
+            const totalSlides = portfolioItems.length;
+            const dotsCount = Math.ceil(totalSlides / slidesPerView);
+            
+            // Create carousel items
+            portfolioItems.forEach(item => {
+                const portfolioItem = document.createElement('div');
+                portfolioItem.className = 'portfolio-item';
+                
+                portfolioItem.innerHTML = `
+                    <div class="portfolio-card">
+                        <div class="portfolio-img">
+                            <img src="${item.img}" alt="${item.title}">
+                        </div>
+                        <div class="portfolio-info">
+                            <h3>${item.title}</h3>
+                            <p>${item.description}</p>
+                            <div class="portfolio-tags">
+                                <span class="tag">${item.category.charAt(0).toUpperCase() + item.category.slice(1)}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                portfolioCarousel.appendChild(portfolioItem);
+            });
+            
+            // Create dots
+            for (let i = 0; i < dotsCount; i++) {
+                const dot = document.createElement('button');
+                dot.className = 'carousel-dot';
+                dot.setAttribute('data-slide', i);
+                if (i === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => goToSlide(i));
+                carouselDots.appendChild(dot);
+            }
+            
+            updateCarousel();
+            startAutoSlide();
+        }
+
+        // Update carousel position
+        function updateCarousel() {
+            const portfolioCarousel = document.getElementById('portfolioCarousel');
+            const itemWidth = 100 / slidesPerView;
+            const translateX = -currentSlide * itemWidth;
+            portfolioCarousel.style.transform = `translateX(${translateX}%)`;
+            
+            // Update active dot
+            const dots = document.querySelectorAll('.carousel-dot');
+            const activeDotIndex = Math.floor(currentSlide / slidesPerView);
+            
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === activeDotIndex);
+            });
+        }
+
+        // Navigate to specific slide
+        function goToSlide(slideIndex) {
+            const totalSlides = portfolioItems.length;
+            const maxSlide = totalSlides - slidesPerView;
+            
+            if (slideIndex < 0) {
+                currentSlide = maxSlide;
+            } else if (slideIndex > maxSlide) {
+                currentSlide = 0;
+            } else {
+                currentSlide = slideIndex;
+            }
+            
+            updateCarousel();
+            resetAutoSlide();
+        }
+
+        // Next slide
+        function nextSlide() {
+            const totalSlides = portfolioItems.length;
+            const maxSlide = totalSlides - slidesPerView;
+            
+            if (currentSlide >= maxSlide) {
+                currentSlide = 0; // Infinite loop
+            } else {
+                currentSlide += slidesPerView;
+            }
+            
+            updateCarousel();
+            resetAutoSlide();
+        }
+
+        // Previous slide
+        function prevSlide() {
+            const totalSlides = portfolioItems.length;
+            const maxSlide = totalSlides - slidesPerView;
+            
+            if (currentSlide <= 0) {
+                currentSlide = maxSlide; // Infinite loop
+            } else {
+                currentSlide -= slidesPerView;
+            }
+            
+            updateCarousel();
+            resetAutoSlide();
+        }
+
+        // Start automatic slideshow
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(nextSlide, autoSlideDelay);
+        }
+
+        // Reset automatic slideshow timer
+        function resetAutoSlide() {
+            clearInterval(autoSlideInterval);
+            startAutoSlide();
+        }
+
+        // Update slides per view based on window width
+        function updateSlidesPerView() {
+            if (window.innerWidth <= 768) {
+                slidesPerView = 1;
+            } else if (window.innerWidth <= 992) {
+                slidesPerView = 2;
+            } else {
+                slidesPerView = 3;
+            }
+            
+            initPortfolioCarousel();
+        }
+
+        // Mobile menu functionality
+        function initMobileMenu() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const closeMenuBtn = document.getElementById('closeMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+            
+            // Open mobile menu
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+            
+            // Close mobile menu
+            closeMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+            
+            // Close menu when clicking on a link
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target) && mobileMenu.classList.contains('active')) {
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        }
+
+        // Smooth scrolling for anchor links
+        function initSmoothScrolling() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Form submission
+        function initFormSubmission() {
+            document.getElementById('consultationForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your consultation request! We will contact you within 48 hours to schedule your appointment.');
+                this.reset();
+            });
+        }
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            initPortfolioCarousel();
+            initMobileMenu();
+            initSmoothScrolling();
+            initFormSubmission();
+            
+            // Carousel navigation
+            document.getElementById('prevBtn').addEventListener('click', prevSlide);
+            document.getElementById('nextBtn').addEventListener('click', nextSlide);
+            
+            // Update slides per view on window resize
+            window.addEventListener('resize', updateSlidesPerView);
+            
+            // Pause autoslide when hovering over carousel
+            const portfolioContainer = document.querySelector('.portfolio-container');
+            portfolioContainer.addEventListener('mouseenter', () => {
+                clearInterval(autoSlideInterval);
+            });
+            
+            portfolioContainer.addEventListener('mouseleave', () => {
+                startAutoSlide();
+            });
+        });
+    </script>
+</body>
+</html>
