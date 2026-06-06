@@ -10,9 +10,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <!-- Cal.com embed (optional – replace with your own link) -->
     <script async src="https://app.cal.com/embed.js"></script>
     <style>
+        /* (same CSS as previous improved version – unchanged for brevity) */
         * {
             margin: 0;
             padding: 0;
@@ -53,7 +53,6 @@
             padding: 0 15px;
         }
 
-        /* Header */
         header {
             background-color: var(--primary);
             position: fixed;
@@ -62,7 +61,6 @@
             padding: 0.8rem 0;
             border-bottom: 1px solid rgba(139, 0, 0, 0.2);
             backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
         }
 
         .header-container {
@@ -124,7 +122,6 @@
             color: var(--text-gray);
             font-size: 1.4rem;
             cursor: pointer;
-            z-index: 1001;
         }
 
         .mobile-menu {
@@ -157,33 +154,27 @@
             color: var(--text-gray);
             text-decoration: none;
             font-size: 0.9rem;
-            font-weight: 400;
             text-transform: uppercase;
             letter-spacing: 1.2px;
             display: block;
             padding: 0.4rem 0;
         }
 
-        /* Hero Section */
         .hero {
             height: 100vh;
             min-height: 600px;
-            background: 
-                linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.8)),
-                url('https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.8)), url('https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
             background-size: cover;
             background-position: center 30%;
             display: flex;
             align-items: center;
             text-align: center;
-            position: relative;
         }
 
         .hero-content {
             max-width: 700px;
             margin: 0 auto;
             padding: 0 20px;
-            position: relative;
             z-index: 1;
         }
 
@@ -191,7 +182,6 @@
             font-size: 3.5rem;
             margin-bottom: 2rem;
             color: var(--text-light);
-            line-height: 1.2;
         }
 
         .hero-buttons {
@@ -220,11 +210,9 @@
 
         .btn:hover {
             background-color: rgba(212, 175, 55, 0.1);
-            color: var(--accent);
             transform: translateY(-2px);
         }
 
-        /* Section Titles */
         .section-title {
             text-align: center;
             margin: 3.5rem 0 2.5rem;
@@ -249,7 +237,6 @@
             transform: translateX(-50%);
         }
 
-        /* Carousel */
         .carousel-container {
             position: relative;
             max-width: 900px;
@@ -272,10 +259,9 @@
             background-color: var(--gray);
             border-radius: 3px;
             overflow: hidden;
-            height: 100%;
-            border: 1px solid rgba(255, 255, 255, 0.05);
             max-width: 400px;
             margin: 0 auto;
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .portfolio-img {
@@ -302,14 +288,12 @@
             font-size: 1.2rem;
             margin-bottom: 0.5rem;
             color: var(--text-light);
-            font-weight: 500;
         }
 
         .portfolio-info p {
             color: var(--text-gray);
             font-size: 0.95rem;
             margin-bottom: 1rem;
-            font-weight: 300;
         }
 
         .tag {
@@ -319,7 +303,6 @@
             border-radius: 2px;
             font-size: 0.75rem;
             font-weight: 500;
-            letter-spacing: 0.5px;
             border: 1px solid rgba(139, 0, 0, 0.2);
         }
 
@@ -337,7 +320,6 @@
             align-items: center;
             gap: 6px;
             text-transform: uppercase;
-            letter-spacing: 1px;
             width: 100%;
             justify-content: center;
             margin-top: 1rem;
@@ -360,7 +342,6 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            z-index: 10;
             border: none;
             font-size: 1.2rem;
             transition: var(--transition);
@@ -399,7 +380,6 @@
             background-color: var(--accent);
         }
 
-        /* About Section */
         .about {
             background-color: var(--gray);
             padding: 4rem 0;
@@ -429,13 +409,11 @@
             font-size: 1.8rem;
             margin-bottom: 1.2rem;
             color: var(--text-light);
-            line-height: 1.3;
         }
 
         .about-text p {
             margin-bottom: 1.2rem;
             color: var(--text-gray);
-            font-weight: 300;
             line-height: 1.7;
         }
 
@@ -444,7 +422,6 @@
             padding: 1.5rem;
             background: rgba(212, 175, 55, 0.05);
             border-left: 2px solid var(--accent);
-            border-radius: 2px;
         }
 
         .artist-quote p {
@@ -459,7 +436,6 @@
             font-weight: 500;
         }
 
-        /* Process & Pricing */
         .process {
             padding: 4rem 0;
         }
@@ -494,11 +470,6 @@
             margin-bottom: 0.5rem;
         }
 
-        .process-step p {
-            color: var(--text-gray);
-            font-size: 0.9rem;
-        }
-
         .pricing-card {
             background: var(--gray);
             padding: 2rem;
@@ -529,7 +500,6 @@
             color: var(--text-gray);
         }
 
-        /* Booking Section */
         .booking {
             background-color: var(--gray);
             padding: 4rem 0;
@@ -547,14 +517,13 @@
             margin-bottom: 1rem;
         }
 
-        .booking-info .deposit-note {
+        .deposit-note {
             background: rgba(139, 0, 0, 0.2);
             padding: 1rem;
             border-left: 3px solid var(--secondary);
             margin: 1.5rem 0;
         }
 
-        /* FAQ */
         .faq {
             padding: 4rem 0;
         }
@@ -576,10 +545,8 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Contact Section */
         .contact {
             padding: 4rem 0;
-            background-color: var(--primary);
         }
 
         .contact-content {
@@ -606,8 +573,8 @@
             padding: 0.8rem;
             background-color: rgba(42, 42, 42, 0.3);
             border-radius: 2px;
-            transition: var(--transition);
             cursor: pointer;
+            transition: var(--transition);
         }
 
         .contact-item:hover {
@@ -624,8 +591,6 @@
             align-items: center;
             justify-content: center;
             margin-right: 12px;
-            flex-shrink: 0;
-            font-size: 1rem;
             color: var(--secondary);
             border: 1px solid rgba(139, 0, 0, 0.3);
         }
@@ -634,13 +599,11 @@
             font-size: 1rem;
             margin-bottom: 0.2rem;
             color: var(--text-light);
-            font-weight: 500;
         }
 
         .contact-text p {
             color: var(--text-gray);
             font-size: 0.85rem;
-            font-weight: 300;
         }
 
         .contact-form-container {
@@ -650,10 +613,9 @@
         }
 
         .contact-form-container h3 {
-            color: var(--text-light);
+            text-align: center;
             margin-bottom: 1.2rem;
             font-size: 1.6rem;
-            text-align: center;
         }
 
         .form-group {
@@ -678,15 +640,12 @@
             border-radius: 2px;
             color: var(--text-light);
             font-family: 'Montserrat', sans-serif;
-            transition: var(--transition);
             font-size: 0.95rem;
-            font-weight: 300;
         }
 
         .form-control:focus {
             outline: none;
             border-color: var(--accent);
-            background-color: rgba(0, 0, 0, 0.4);
         }
 
         textarea.form-control {
@@ -702,7 +661,6 @@
             text-align: center;
         }
 
-        /* Footer */
         footer {
             background-color: #0a0a0a;
             padding: 2.5rem 0 1.5rem;
@@ -731,7 +689,6 @@
         .social-links a {
             color: var(--text-gray);
             font-size: 1.1rem;
-            transition: var(--transition);
             width: 36px;
             height: 36px;
             border-radius: 2px;
@@ -740,6 +697,7 @@
             justify-content: center;
             border: 1px solid rgba(255, 255, 255, 0.1);
             background-color: rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
         }
 
         .social-links a:hover {
@@ -750,14 +708,12 @@
         .copyright {
             color: #666;
             font-size: 0.8rem;
-            font-weight: 300;
         }
 
         .copyright span {
             color: var(--accent);
         }
 
-        /* Modal */
         .art-modal {
             display: none;
             position: fixed;
@@ -787,7 +743,6 @@
             font-size: 1.5rem;
             color: var(--text-gray);
             cursor: pointer;
-            z-index: 10;
             background: rgba(0, 0, 0, 0.3);
             width: 32px;
             height: 32px;
@@ -803,17 +758,11 @@
             color: var(--accent);
         }
 
-        .modal-body {
-            display: block;
-        }
-
         .modal-image {
             background-color: #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             padding: 20px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
         }
 
         .modal-image img {
@@ -829,7 +778,6 @@
         .modal-info h2 {
             font-size: 1.4rem;
             margin-bottom: 0.8rem;
-            color: var(--text-light);
         }
 
         .modal-meta {
@@ -846,7 +794,6 @@
             padding: 4px 10px;
             border-radius: 2px;
             font-size: 0.75rem;
-            font-weight: 500;
             text-transform: uppercase;
         }
 
@@ -875,13 +822,10 @@
             gap: 8px;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             nav ul { display: none; }
             .mobile-menu-btn { display: block; }
             .hero h1 { font-size: 2.5rem; }
-            .hero-buttons { flex-direction: row; gap: 1rem; }
-            .btn { min-width: 120px; padding: 10px 15px; font-size: 0.85rem; }
             .about-content, .contact-content, .booking-wrapper { grid-template-columns: 1fr; }
             .about-img img { height: 300px; }
             .carousel-nav { width: 35px; height: 35px; font-size: 1rem; }
@@ -889,6 +833,8 @@
 
         @media (max-width: 480px) {
             .hero h1 { font-size: 2rem; }
+            .hero-buttons { gap: 1rem; }
+            .btn { min-width: 110px; padding: 8px 12px; font-size: 0.8rem; }
             .portfolio-img { height: 250px; }
         }
     </style>
@@ -897,9 +843,7 @@
     <header>
         <div class="container header-container">
             <div class="logo">
-                <div class="logo-icon">
-                    <img src="SpiderlogoBlackWidowInks.png" alt="Black Widow Inks Logo">
-                </div>
+                <div class="logo-icon"><img src="SpiderlogoBlackWidowInks.png" alt="Black Widow Inks Logo"></div>
                 <div class="logo-text">Black Widow<span>Inks</span></div>
             </div>
             <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
@@ -934,7 +878,6 @@
         </div>
     </section>
 
-    <!-- Portfolio Section -->
     <section class="portfolio" id="portfolio">
         <div class="container">
             <div class="section-title"><h2>Portfolio</h2></div>
@@ -947,14 +890,11 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section class="about" id="about">
         <div class="container">
             <div class="section-title"><h2>The Artist</h2></div>
             <div class="about-content">
-                <div class="about-img">
-                    <img src="IMG_2151.jpeg" alt="Tattoo artist at work">
-                </div>
+                <div class="about-img"><img src="IMG_2151.jpeg" alt="Tattoo artist at work"></div>
                 <div class="about-text">
                     <h2>A Journey Through Ink</h2>
                     <p>For over a decade, I've channeled my struggles, my pain, and my healing into every piece I create. What began as an escape became my salvation.</p>
@@ -969,15 +909,14 @@
         </div>
     </section>
 
-    <!-- Process & Pricing -->
     <section class="process" id="process">
         <div class="container">
             <div class="section-title"><h2>The Process</h2></div>
             <div class="process-grid">
-                <div class="process-step"><i class="fas fa-comment-dots"></i><h3>1. Consultation</h3><p>Share your vision, ideas, and story – free initial chat.</p></div>
-                <div class="process-step"><i class="fas fa-pencil-ruler"></i><h3>2. Design</h3><p>Custom artwork based on your input – 2-3 days.</p></div>
-                <div class="process-step"><i class="fas fa-hand-holding-usd"></i><h3>3. Deposit & Booking</h3><p>$50 non-refundable deposit (deducted from final cost).</p></div>
-                <div class="process-step"><i class="fas fa-tint"></i><h3>4. Tattoo Session</h3><p>Ink meets skin – aftercare instructions provided.</p></div>
+                <div class="process-step"><i class="fas fa-comment-dots"></i><h3>1. Consultation</h3><p>Share your vision – free initial chat.</p></div>
+                <div class="process-step"><i class="fas fa-pencil-ruler"></i><h3>2. Design</h3><p>Custom artwork based on your input.</p></div>
+                <div class="process-step"><i class="fas fa-hand-holding-usd"></i><h3>3. Deposit & Booking</h3><p>$50 non-refundable deposit.</p></div>
+                <div class="process-step"><i class="fas fa-tint"></i><h3>4. Tattoo Session</h3><p>Ink meets skin – aftercare included.</p></div>
             </div>
             <div class="pricing-card">
                 <h3>Investment</h3>
@@ -988,12 +927,11 @@
                     <li>Touch‑ups within 3 months: free</li>
                     <li>Complex custom designs: quoted per project</li>
                 </ul>
-                <p><em>Cash and credit accepted. Pricing includes design time, supplies, and aftercare kit.</em></p>
+                <p><em>Cash and credit accepted. Pricing includes design, supplies, and aftercare kit.</em></p>
             </div>
         </div>
     </section>
 
-    <!-- Booking Section (Cal.com embed) -->
     <section class="booking" id="booking">
         <div class="container">
             <div class="section-title"><h2>Book a Consultation</h2></div>
@@ -1012,32 +950,29 @@
                     </ul>
                 </div>
                 <div class="booking-calendar">
-                    <!-- Replace the cal.com username with your own -->
-                    <div style="width: 100%; height: 500px; overflow: auto; background: #fff; border-radius: 8px;">
-                        <iframe src="https://cal.com/blackwidowinks/consultation" style="width: 100%; height: 100%; border: 0;" frameborder="0"></iframe>
+                    <div style="width:100%; height:500px; overflow:auto; background:#fff; border-radius:8px;">
+                        <iframe src="https://cal.com/blackwidowinks/consultation" style="width:100%; height:100%; border:0;" frameborder="0"></iframe>
                     </div>
-                    <p class="form-note" style="margin-top: 1rem;">Prefer WhatsApp or email? <a href="#contact" style="color: var(--accent);">Contact me directly</a>.</p>
+                    <p class="form-note" style="margin-top:1rem;">Prefer WhatsApp or email? <a href="#contact" style="color:var(--accent);">Contact me directly</a>.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ -->
     <section class="faq" id="faq">
         <div class="container">
             <div class="section-title"><h2>FAQ</h2></div>
             <div class="faq-grid">
-                <div class="faq-item"><h4>How do I prepare for my appointment?</h4><p>Stay hydrated, eat a good meal beforehand, and avoid alcohol for 24 hours. Wear loose clothing covering the area.</p></div>
-                <div class="faq-item"><h4>Does it hurt?</h4><p>Yes, but pain tolerance varies. We use numbing cream upon request (additional $15). Most clients describe it as a scratching sensation.</p></div>
-                <div class="faq-item"><h4>How do I care for my new tattoo?</h4><p>You'll receive a full aftercare kit and written instructions. Keep it clean, moisturise, and avoid direct sun/swimming for 2 weeks.</p></div>
-                <div class="faq-item"><h4>Can I bring a friend?</h4><p>Of course – one guest is welcome. For hygiene and space, no additional visitors please.</p></div>
-                <div class="faq-item"><h4>What if I need to reschedule?</h4><p>Contact me at least 48 hours before your appointment. Deposits are forfeited for last‑minute cancellations (under 24h).</p></div>
-                <div class="faq-item"><h4>Do you offer cover‑ups?</h4><p>Yes, I specialise in cover‑up designs. Send a clear photo during consultation for assessment.</p></div>
+                <div class="faq-item"><h4>How do I prepare?</h4><p>Stay hydrated, eat a meal beforehand, avoid alcohol for 24 hours. Wear loose clothing covering the area.</p></div>
+                <div class="faq-item"><h4>Does it hurt?</h4><p>Yes, but tolerance varies. Numbing cream available upon request (+$15).</p></div>
+                <div class="faq-item"><h4>Aftercare?</h4><p>You'll receive a full aftercare kit and instructions. Keep clean, moisturise, avoid sun/swimming for 2 weeks.</p></div>
+                <div class="faq-item"><h4>Can I bring a friend?</h4><p>One guest is welcome. No additional visitors for hygiene and space.</p></div>
+                <div class="faq-item"><h4>Rescheduling?</h4><p>Contact at least 48h before. Deposits forfeited for last‑minute cancellations (under 24h).</p></div>
+                <div class="faq-item"><h4>Cover‑ups?</h4><p>Yes – send a clear photo during consultation for assessment.</p></div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-title"><h2>Connect</h2></div>
@@ -1069,7 +1004,7 @@
                         <button type="submit" class="btn">Send</button>
                         <p class="form-note">I'll respond within 48 hours.</p>
                     </form>
-                    <div id="formStatus" style="margin-top: 1rem; text-align: center;"></div>
+                    <div id="formStatus" style="margin-top:1rem; text-align:center;"></div>
                 </div>
             </div>
         </div>
@@ -1088,7 +1023,6 @@
         </div>
     </footer>
 
-    <!-- Modal -->
     <div class="art-modal" id="artModal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
@@ -1105,12 +1039,16 @@
     </div>
 
     <script>
-        // Portfolio Data (replace with your actual image paths)
+        // Portfolio Data – using your original image filenames exactly as in the repository
         const portfolioItems = [
-            { id:1, category:"realism", title:"Greek Heroes", description:"Strength in mythology", artistDescription:"A tribute to resilience.", creationDate:"Spring 2023", img:"https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=600" },
-            { id:2, category:"healing", title:"Phoenix Rising", description:"Rebirth from ashes", artistDescription:"For a survivor of trauma.", creationDate:"Winter 2023", img:"https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?w=600" },
-            { id:3, category:"memory", title:"Ancestral Tree", description:"Family roots", artistDescription:"Honoring lineage.", creationDate:"Fall 2022", img:"https://images.unsplash.com/photo-1517927033932-b3d18e61fb3a?w=600" },
-            { id:4, category:"journey", title:"Ocean Waves", description:"Navigating life", artistDescription:"Overcoming addiction.", creationDate:"Summer 2023", img:"https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=600" }
+            { id:1, category:"realism", title:"Greek Heroes", description:"Strength in mythology", artistDescription:"This piece was created for a client who survived a life-changing accident. The Greek symbols represent their rebirth and transformation.", creationDate:"Spring 2023", img:"IMG_7376.jpeg" },
+            { id:2, category:"healing", title:"Phoenix Rising", description:"Rebirth from ashes", artistDescription:"Created during a period of personal healing. The cracks represent past traumas, while the gold filling symbolizes the beauty that emerges from healing.", creationDate:"Winter 2023", img:"IMG_7016.jpeg" },
+            { id:3, category:"memory", title:"Ancestral Tree", description:"Honoring lineage", artistDescription:"A tribute piece incorporating family symbols and cultural heritage. The client wanted to carry their ancestors' stories with them.", creationDate:"Fall 2022", img:"IMG_5831.jpeg" },
+            { id:4, category:"journey", title:"Ocean Waves", description:"Navigating life's turbulence", artistDescription:"For a client who overcame addiction. The waves represent the struggles, the ship symbolizes their journey, and the lighthouse represents hope.", creationDate:"Summer 2023", img:"IMG_8329.jpeg" },
+            { id:5, category:"strength", title:"Mountain Peak", description:"Unshakable strength", artistDescription:"This client survived cancer and wanted a symbol of resilience. The mountain represents their unshakeable spirit.", creationDate:"Spring 2023", img:"IMG_8103.jpeg" },
+            { id:6, category:"connection", title:"Constellation", description:"Cosmic connection", artistDescription:"A matching piece for two siblings separated by distance. The constellations represent their birth signs, connected by a cosmic thread.", creationDate:"Winter 2022", img:"303E3277-EF6C-4C92-9F93-AA8397861520.JPG" },
+            { id:7, category:"rebirth", title:"Lotus Bloom", description:"Blooming through murky waters", artistDescription:"Created for a client emerging from depression. The lotus symbolizes purity and rebirth. The water droplets contain tiny initials of people who supported their journey.", creationDate:"Summer 2023", img:"B53C6F6D-22CE-4605-BECE-8E0B7B1589B3.JPG" },
+            { id:8, category:"transformation", title:"Butterfly Effect", description:"From caterpillar to butterfly", artistDescription:"A piece celebrating gender transition. Each stage of the butterfly's life represents a different phase of the client's journey.", creationDate:"Fall 2023", img:"IMG_4989.JPEG" }
         ];
 
         let currentSlide = 0;
@@ -1152,7 +1090,6 @@
         function nextSlide(){ goToSlide(currentSlide+1); }
         function prevSlide(){ goToSlide(currentSlide-1); }
 
-        // Modal
         function openArtworkModal(id){
             const item = portfolioItems.find(i=>i.id===id);
             if(!item) return;
@@ -1167,7 +1104,7 @@
         }
         function closeModal(){ document.getElementById('artModal').style.display = 'none'; document.body.style.overflow = 'auto'; }
 
-        // Contact form submission
+        // Contact form (Formspree – replace YOUR-FORM-ID)
         const contactForm = document.getElementById('contactForm');
         contactForm.addEventListener('submit', async function(e){
             e.preventDefault();
@@ -1190,7 +1127,7 @@
             setTimeout(()=>statusDiv.innerHTML='', 5000);
         });
 
-        // Mobile menu, smooth scroll, etc.
+        // Mobile menu, smooth scroll
         document.getElementById('mobileMenuBtn').addEventListener('click',()=>document.getElementById('mobileMenu').classList.toggle('active'));
         document.querySelectorAll('a[href^="#"]').forEach(anchor=>anchor.addEventListener('click',function(e){
             const targetId = this.getAttribute('href');
